@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 DATASET_PATH="/tmp/nvflare/dataset/des.csv"
-NUM_CLIENTS=20
+NUM_CLIENTS=2
 valid_frac=1
 echo "Generating job configs with data splits, reading from ${DATASET_PATH}"
 

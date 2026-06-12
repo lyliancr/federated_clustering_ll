@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Parameters
-NUM_CLIENTS=10
+NUM_CLIENTS=2
 CLIENTS=()
 for i in $(seq 0 $((NUM_CLIENTS - 1))); do
     CLIENTS+=("site-$((i+1))")
@@ -9,7 +9,7 @@ done
 
 DATASET_PREFIX="client_"
 DATASET_FOLDER="/tmp/nvflare/dataset/dataset.csv"
-LOCAL_DATA_PATH="/home/nymeria/repos/federated_clustering/fed-clustering/processed"
+LOCAL_DATA_PATH="/home/lylian/federated_clustering_FADE/fed-clustering/processed"
 
 # Function to create folders and copy data
 create_folders_and_copy() {
