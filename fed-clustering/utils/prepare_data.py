@@ -23,15 +23,15 @@ def prepare_data(
     df = df.fillna(-1)
     df = df.apply(pd.to_numeric, errors="coerce")  # Convert non-numeric to NaN
 
-    df = df[["coadd_object_id", "mag_auto_g_dered", "mag_auto_r_dered", "mag_auto_i_dered", "mag_auto_z_dered", "mag_auto_y_dered"]]
+    df = df[["coadd_object_id", "mag_auto_g", "mag_auto_r", "mag_auto_i", "mag_auto_z", "mag_auto_y"]]
 
     # Add colour features
-    df["gmr"] = df["mag_auto_g_dered"] - df["mag_auto_r_dered"]
-    df["rmi"] = df["mag_auto_r_dered"] - df["mag_auto_i_dered"]
-    df["imz"] = df["mag_auto_i_dered"] - df["mag_auto_z_dered"]
-    df["zmy"] = df["mag_auto_z_dered"] - df["mag_auto_y_dered"]
+    df["gmr"] = df["mag_auto_g"] - df["mag_auto_r"]
+    df["rmi"] = df["mag_auto_r"] - df["mag_auto_i"]
+    df["imz"] = df["mag_auto_i"] - df["mag_auto_z"]
+    df["zmy"] = df["mag_auto_z"] - df["mag_auto_y"]
 
-    columns_to_use = ["coadd_object_id", "mag_auto_g_dered", "mag_auto_r_dered", "mag_auto_i_dered", "mag_auto_z_dered", "mag_auto_y_dered", "gmr", "rmi", "imz", "zmy"]
+    columns_to_use = ["coadd_object_id", "mag_auto_g", "mag_auto_r", "mag_auto_i", "mag_auto_z", "mag_auto_y", "gmr", "rmi", "imz", "zmy"]
     df = df[columns_to_use]
 
     # Standardize all feature columns except identifiers/coordinates
@@ -99,7 +99,7 @@ def main():
     output_dir = os.path.dirname(args.out_path)
     filename = os.path.basename(args.out_path)
 
-    columns_to_use = ['coadd_object_id', 'mag_auto_g_dered','mag_auto_r_dered','mag_auto_i_dered','mag_auto_z_dered','mag_auto_y_dered','gmr','rmi','imz','zmy']
+    columns_to_use = ['coadd_object_id', 'mag_auto_g','mag_auto_r','mag_auto_i','mag_auto_z','mag_auto_y','gmr','rmi','imz','zmy']
 
 
     # columns_to_use = [col.strip() for col in args.columns.split(",")]

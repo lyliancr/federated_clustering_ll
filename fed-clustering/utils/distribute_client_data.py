@@ -2,11 +2,11 @@ import subprocess
 import sys
 
 # Parameters
-NUM_CLIENTS = 10
+NUM_CLIENTS = 2
 CLIENTS = [f"site-{i+1}" for i in range(NUM_CLIENTS)] 
 DATASET_PREFIX = "client_"  # e.g., client_0.csv, client_1.csv, ...
 DATASET_FOLDER = "/tmp/nvflare/dataset/dataset.csv"
-LOCAL_DATA_PATH = "/home/nymeria/repos/federated_clustering/fed-clustering/processed"  # Where the split CSVs are stored on host
+LOCAL_DATA_PATH = "/home/lylian/federated_clustering_FADE/fed-clustering/processed"  # Where the split CSVs are stored on host
 
 
 def create_folders_and_copy():
